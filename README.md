@@ -1,5 +1,5 @@
 # Challenge-Amigo-Secreto
-Amigo Secreto
+Challenge Amigo Secreto
 Este é um projeto simples de "Amigo Secreto" desenvolvido em HTML, CSS e JavaScript. O objetivo é permitir que os usuários insiram os nomes de seus amigos, sorteiem um amigo secreto e visualizem o resultado em tempo real.
 
 Funcionalidades
