@@ -1,42 +1,116 @@
-# Challenge-Amigo-Secreto
-Challenge Amigo Secreto
-Este é um projeto simples de "Amigo Secreto" desenvolvido em HTML, CSS e JavaScript. O objetivo é permitir que os usuários insiram os nomes de seus amigos, sorteiem um amigo secreto e visualizem o resultado em tempo real.
 
-Funcionalidades
-Adicionar amigos: O usuário pode inserir os nomes de seus amigos em um campo de entrada, e esses nomes serão armazenados em uma lista.
-Exibir lista de amigos: A lista de amigos inseridos é exibida em tempo real na página.
-Sorteio do amigo secreto: O usuário pode sortear aleatoriamente os amigos secretos, com o resultado sendo mostrado na tela.
-Tecnologias Utilizadas
-HTML: Estrutura da página.
-CSS: Estilos e layout da página.
-JavaScript: Lógica de captura de entradas, validação, atualização da lista de amigos e sorteio.
-Como Usar
-1. Clone o repositório
-bash
-Copiar
-git clone https://github.com/seu-usuario/amigo-secreto.git
-2. Abra o projeto no seu editor de código favorito.
-3. Abra o arquivo index.html no seu navegador.
-4. Utilize a página:
-Adicionar amigos: Digite o nome do amigo no campo de entrada e clique no botão "Adicionar" para adicionar o amigo à lista.
-Sortear amigo secreto: Clique no botão "Sortear amigo" para realizar o sorteio dos amigos secretos. O nome de cada amigo sorteado será exibido na lista abaixo.
-Estrutura do Projeto
-bash
-Copiar
-amigo-secreto/
+# Desafio Amigo Secreto - Sorteio Online
+
+Este projeto permite realizar sorteios de "Desafio Amigo Secreto" online. O objetivo é possibilitar que os usuários insiram os nomes de seus amigos, sorteiem aleatoriamente os amigos secretos e visualizem os resultados em tempo real, sem a necessidade de papel e caneta.
+
+### Funcionalidades
+
+- **Adicionar amigo(s)**: O usuário pode inserir os nomes dos amigos em um campo de entrada, e esses nomes serão armazenados em uma lista exibida na tela.
+- **Exibir lista de amigo(s)**: A lista de amigos inseridos será mostrada em tempo real, facilitando o acompanhamento.
+- **Sorteio do amigo secreto**: Ao clicar no botão "Sortear amigo", o sistema realiza o sorteio aleatório e exibe o resultado na tela.
+
+### Tecnologias Utilizadas
+
+- **HTML**: Usado para estruturar a página e os elementos do formulário.
+- **CSS**: Usado para o estilo e layout da página, tornando a interface mais amigável.
+- **JavaScript**: Responsável pela lógica de captura das entradas do usuário, validação de dados e sorteio dos amigos secretos.
+
+### Como usar
+
+1. **Clonar o repositório**:
+   Para começar a usar este projeto, clone o repositório para sua máquina local utilizando o comando:
+
+   ```bash
+   git clone https://github.com/seu-usuario/amigo-secreto.git
+   ```
+
+2. **Abrir o projeto**:
+   - Abra o projeto no seu editor de código favorito.
+   - Abra o arquivo `index.html` no seu navegador para visualizar o projeto em funcionamento.
+
+### Funcionalidades Futuras
+
+- **Persistência de dados**: Adicionar um mecanismo para salvar os dados dos amigos (ex: no `localStorage` ou em um banco de dados), permitindo que as informações não se percam quando a página for recarregada.
+- **Personalização de sorteio**: Permitir que os usuários personalizem mensagens de sorteio (ex: incluir uma mensagem de boas festas ou algo mais pessoal).
+- **Melhorias na validação de entrada**: Aperfeiçoar a validação para garantir que os nomes dos amigos não sejam duplicados ou estejam vazios.
+
+### Licença
+
+Este projeto está licenciado sob a licença MIT. Consulte o arquivo `LICENSE` para mais detalhes. Ao utilizar ou modificar o código, por favor, faça referência a esta licença.
+
+### Código JavaScript para Sorteio
+
+O código abaixo mostra duas opções de sorteio: individual e em grupo.
+
+#### Lógica para Sorteio Individual
+
+```javascript
+// Função para sortear o amigo secreto
+function sortearAmigo() {
+    if (amigos.length < 2) {
+        alert("Por favor, adicione pelo menos 2 amigos para sortear.");
+        return;
+    }
+
+    // Embaralhar a lista de amigos
+    let amigosEmbaralhados = amigos.slice(); // Copiar o array
+    for (let i = amigosEmbaralhados.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [amigosEmbaralhados[i], amigosEmbaralhados[j]] = [amigosEmbaralhados[j], amigosEmbaralhados[i]]; // Troca de posição
+    }
+
+    // Exibir o resultado no HTML
+    var resultado = document.getElementById('resultado');
+    resultado.innerHTML = ""; // Limpa qualquer resultado anterior
+    amigosEmbaralhados.forEach(function(amigo, index) {
+        var li = document.createElement('li');
+        li.textContent = `${amigo} foi sorteado para o amigo secreto!`;
+        resultado.appendChild(li);
+    });
+}
+```
+
+#### Lógica para Sorteio para o Grupo de Amigos
+
+**Este código sorteia todos os amigos de uma vez, exibindo os sorteios de todos ao mesmo tempo.**
+
+```javascript
+// Função para sortear o amigo secreto (todos ao mesmo tempo)
+function sortearAmigos() {
+    if (amigos.length < 2) {
+        alert("Por favor, adicione pelo menos 2 amigos para sortear.");
+        return;
+    }
+
+    // Embaralhar a lista de amigos
+    let amigosEmbaralhados = amigos.slice(); // Copiar o array
+    for (let i = amigosEmbaralhados.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [amigosEmbaralhados[i], amigosEmbaralhados[j]] = [amigosEmbaralhados[j], amigosEmbaralhados[i]]; // Troca de posição
+    }
+
+    // Exibir o resultado no HTML
+    var resultado = document.getElementById('resultado');
+    resultado.innerHTML = ""; // Limpa qualquer resultado anterior
+    
+    amigosEmbaralhados.forEach(function(amigo, index) {
+        var li = document.createElement('li');
+        li.textContent = `${amigo} foi sorteado para o amigo secreto!`;
+        resultado.appendChild(li);
+    });
+}
+```
+
+### Estrutura do Projeto
+
+```bash
 ├── assets/                # Imagens do projeto
 │   ├── amigo-secreto.png  # Imagem ilustrativa
 │   └── play_circle_outline.png  # Ícone do botão de sorteio
 ├── index.html             # Arquivo principal HTML
 ├── app.js                 # Arquivo de lógica JavaScript
-└── style.css              # Arquivo de estilos CSS
+├── style.css              # Arquivo de estilos CSS
 └── README.md              # Este arquivo
-Funcionalidades Futuros
-Persistência de dados: Adicionar uma forma de salvar os dados dos amigos, para que, ao atualizar a página, as informações não sejam perdidas.
-Customização de sorteio: Permitir que o usuário personalize o sorteio (ex: adicionar mensagens personalizadas).
-Validação de entrada mais avançada: Melhorar a validação para garantir que os nomes dos amigos não se repitam.
-Contribuições
-Se você quiser contribuir para o projeto, sinta-se à vontade para abrir uma pull request com melhorias ou correções de bugs!
+```
 
-Licença
-Este projeto está sob a licença MIT. Consulte o arquivo LICENSE para mais detalhes.
+```
