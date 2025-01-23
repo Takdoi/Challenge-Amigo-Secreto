@@ -45,6 +45,41 @@ O código abaixo mostra duas opções de sorteio: individual e em grupo.
 #### Lógica para Sorteio Individual
 
 ```javascript
+// Função para adicionar um amigo à lista
+function adicionarAmigo() {
+    const inputNome = document.getElementById('inputNome').value;
+
+    if (inputNome === "") {
+        alert("Por favor, insira um nome.");
+        return;
+    }
+
+    amigos.push(inputNome);
+    document.getElementById('inputNome').value = "";
+    atualizarListaAmigos();
+}
+
+// Função para atualizar a lista de amigos
+function atualizarListaAmigos() {
+    const listaAmigos = document.getElementById('listaAmigos');
+    listaAmigos.innerHTML = "";
+
+    for (let amigo of amigos) {
+        const novoAmigo = document.createElement('li');
+        novoAmigo.textContent = amigo;
+        listaAmigos.appendChild(novoAmigo);
+    }
+}
+
+// Função para remover um amigo da lista
+function removerAmigo(nome) {
+    const index = amigos.indexOf(nome);
+    if (index !== -1) {
+        amigos.splice(index, 1);
+        atualizarListaAmigos();
+    }
+}
+
 // Função para sortear o amigo secreto
 function sortearAmigo() {
     if (amigos.length < 2) {
@@ -59,14 +94,12 @@ function sortearAmigo() {
         [amigosEmbaralhados[i], amigosEmbaralhados[j]] = [amigosEmbaralhados[j], amigosEmbaralhados[i]]; // Troca de posição
     }
 
-    // Exibir o resultado no HTML
-    var resultado = document.getElementById('resultado');
-    resultado.innerHTML = ""; // Limpa qualquer resultado anterior
-    amigosEmbaralhados.forEach(function(amigo, index) {
-        var li = document.createElement('li');
-        li.textContent = `${amigo} foi sorteado para o amigo secreto!`;
-        resultado.appendChild(li);
-    });
+    // Armazenar o amigo sorteado em uma variável
+    const amigoSorteado = amigosEmbaralhados[0];
+
+    // Exibir o amigo sorteado
+    const resultado = document.getElementById('resultado');
+    resultado.innerHTML = `Amigo sorteado: ${amigoSorteado}`;
 }
 ```
 
