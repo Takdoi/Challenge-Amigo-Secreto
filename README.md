@@ -258,16 +258,13 @@ function sortearGrupo() {
 ```
 ### Diagramas
 
-Fluxograma - fluxograma_sorteio_grupo
-Fluxograma - fluxograma_sorteio_modal
-Diagrama UML - diagrama em UML sorteio INDIVIDUAL
-Diagrama UML - diagrama em UML sorteio GRUPO
-Diagrama UML - diagrama em UML sorteio MODAL
-
-
-
-```markdown
-![Fluxograma - Sorteio Individual](DIAGRAMAS_IMAGENS/fluxograma_sorteio_individual.png)
-
+| Imagem                                                                 | Descrição                              |
+| --------------------------------------------------------------------- | -------------------------------------- |
+| ![Fluxograma - fluxograma_sorteio_individual](https://raw.githubusercontent.com/Takdoi/Challenge-Amigo-Secreto/main/DIAGRAMAS_IMAGENS/fluxograma_sorteio_individual.png) | Fluxograma - sorteio individual        |
+| ![Diagrama UML - sorteio INDIVIDUAL](https://github.com/Takdoi/Challenge-Amigo-Secreto/blob/main/DIAGRAMAS_IMAGENS/diagrama%20em%20UML%20sorteio%20INDIVIDUAL.png) | Diagrama UML - sorteio individual      |
+| ![Fluxograma - fluxograma_sorteio_grupo](https://github.com/Takdoi/Challenge-Amigo-Secreto/blob/main/DIAGRAMAS_IMAGENS/fluxograma_sorteio_grupo.png) | Fluxograma - sorteio grupo             |
+| ![Diagrama UML - sorteio GRUPO](https://github.com/Takdoi/Challenge-Amigo-Secreto/blob/main/DIAGRAMAS_IMAGENS/diagrama%20em%20UML%20sorteio%20GRUPO.png) | Diagrama UML - sorteio grupo           |
+| ![Fluxograma - fluxograma_sorteio_modal](https://raw.githubusercontent.com/Takdoi/Challenge-Amigo-Secreto/main/DIAGRAMAS_IMAGENS/fluxograma_sorteio_modal.png) | Fluxograma - sorteio modal             |
+| ![Diagrama UML - sorteio MODAL](https://github.com/Takdoi/Challenge-Amigo-Secreto/blob/main/DIAGRAMAS_IMAGENS/diagrama%20em%20UML%20sorteio%20MODAL.png) | Diagrama UML - sorteio modal           |
 
 
