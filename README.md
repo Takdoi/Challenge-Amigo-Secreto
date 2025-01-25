@@ -256,3 +256,18 @@ function sortearGrupo() {
     └── style.css
     └── README.md
 ```
+### Diagramas
+
+Fluxograma - fluxograma_sorteio_grupo
+Fluxograma - fluxograma_sorteio_modal
+Diagrama UML - diagrama em UML sorteio INDIVIDUAL
+Diagrama UML - diagrama em UML sorteio GRUPO
+Diagrama UML - diagrama em UML sorteio MODAL
+
+
+
+```markdown
+![Fluxograma - Sorteio Individual](DIAGRAMAS_IMAGENS/fluxograma_sorteio_individual.png)
+
+
+
